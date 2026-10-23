@@ -1,0 +1,459 @@
+/* ============================================================
+   RUANG TEDUH CAFE - MASTER STYLESHEET v3.0
+   Palette: Dusty Rose / Blush / Cream / Berry (PROFESIONAL)
+   ============================================================ */
+
+:root {
+  --rose-dusty: #B55B72;
+  --rose-dark:  #A94F67;
+  --rose-soft:  #C97A8E;
+  --blush:      #F7C8D0;
+  --blush-light:#FADDE2;
+  --cream:      #FAF0EE;
+  --cream-alt:  #FFF6F6;
+  --berry:      #6E2E3F;
+  --berry-soft: #8B5A66;
+  --border-pink:#F5C2CB;
+  --white:      #FFFFFF;
+
+  --shadow-xs: 0 1px 2px rgba(110, 46, 63, 0.04);
+  --shadow-sm: 0 2px 6px rgba(110, 46, 63, 0.06);
+  --shadow-md: 0 4px 14px rgba(110, 46, 63, 0.08);
+  --shadow-lg: 0 12px 32px rgba(110, 46, 63, 0.10);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--cream);
+  color: var(--berry);
+  line-height: 1.6;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: var(--berry);
+  line-height: 1.25;
+}
+
+a { text-decoration: none; color: inherit; transition: color 150ms ease; }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--border-pink); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rose-soft); }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary-cafe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--rose-dusty);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 200ms ease;
+  box-shadow: 0 2px 8px rgba(181, 91, 114, 0.20);
+}
+
+.btn-primary-cafe:hover {
+  background: var(--rose-dark);
+  transform: translateY(-1px);
+  color: var(--white);
+}
+
+.btn-outline-cafe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  color: var(--berry);
+  border: 1.5px solid var(--border-pink);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-outline-cafe:hover {
+  border-color: var(--rose-dusty);
+  color: var(--rose-dusty);
+  background: var(--white);
+}
+
+.btn-ghost-cafe {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  color: var(--berry-soft);
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.btn-ghost-cafe:hover {
+  background: var(--blush-light);
+  color: var(--rose-dark);
+}
+
+/* ============================================================
+   INPUT
+   ============================================================ */
+.input-cafe {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--border-pink);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--berry);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input-cafe:focus {
+  outline: none;
+  border-color: var(--rose-dusty);
+  box-shadow: 0 0 0 3px rgba(181, 91, 114, 0.10);
+}
+
+.input-cafe::placeholder { color: var(--berry-soft); opacity: 0.55; }
+
+textarea.input-cafe { resize: vertical; min-height: 100px; line-height: 1.6; }
+
+select.input-cafe {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23B55B72' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+/* ============================================================
+   BADGES (SEMUA PINK/BERRY - KONSISTEN)
+   ============================================================ */
+.badge-cafe {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.badge-cafe-primary {
+  background: rgba(181, 91, 114, 0.12);
+  color: var(--rose-dark);
+}
+
+.badge-cafe-soft {
+  background: var(--blush-light);
+  color: var(--berry);
+}
+
+/* Status badge pakai DOT, bukan warna warni */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--cream-alt);
+  color: var(--berry);
+  border: 1px solid var(--border-pink);
+}
+
+.badge-status .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge-status[data-status="pending"]    .dot { background: #d97706; } /* amber-600 - dot saja */
+.badge-status[data-status="diproses"]   .dot { background: var(--rose-dusty); }
+.badge-status[data-status="selesai"]    .dot { background: #16a34a; } /* green-600 - dot saja */
+.badge-status[data-status="dibatalkan"] .dot { background: #dc2626; } /* red-600 - dot saja */
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar-cafe {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 240, 238, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-pink);
+}
+
+/* ============================================================
+   SIDEBAR ADMIN
+   ============================================================ */
+.sidebar-admin {
+  background: var(--berry);
+  min-height: calc(100vh - 80px);
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+.sidebar-admin::-webkit-scrollbar { width: 4px; }
+.sidebar-admin::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+
+.sidebar-admin .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  transition: all 150ms ease;
+}
+
+.sidebar-admin .nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+}
+
+.sidebar-admin .nav-link.active {
+  background: var(--rose-dusty);
+  color: var(--white);
+  box-shadow: 0 2px 8px rgba(181, 91, 114, 0.35);
+}
+
+/* ============================================================
+   MENU CARD
+   ============================================================ */
+.menu-card {
+  background: var(--white);
+  border: 1px solid var(--border-pink);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 250ms ease, transform 250ms ease, border-color 250ms ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--rose-soft);
+}
+
+.menu-card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--blush-light);
+}
+
+.menu-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.menu-card:hover .menu-card__image img { transform: scale(1.04); }
+
+.menu-card__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-soft);
+  font-size: 2.5rem;
+}
+
+.menu-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--berry);
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+
+.menu-card__price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--rose-dusty);
+}
+
+/* ============================================================
+   STAT CARD
+   ============================================================ */
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border-pink);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: box-shadow 250ms ease, transform 250ms ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blush);
+  color: var(--rose-dark);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* ============================================================
+   STRUK / RECEIPT
+   ============================================================ */
+.struk-wrapper {
+  background: var(--cream-alt);
+  border: 1.5px dashed var(--border-pink);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: 'Courier New', monospace;
+}
+
+.struk-divider {
+  height: 1px;
+  border-top: 1px dashed var(--berry-soft);
+  opacity: 0.3;
+  margin: 0.75rem 0;
+}
+
+.row-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   UPLOAD AREA
+   ============================================================ */
+.upload-area {
+  display: block;
+  border: 1.5px dashed var(--border-pink);
+  border-radius: 12px;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  background: var(--cream-alt);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.upload-area:hover {
+  border-color: var(--rose-dusty);
+  background: var(--blush-light);
+}
+
+.upload-preview {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+.alert-cafe {
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  border-left: 3px solid;
+  font-size: 0.875rem;
+}
+
+.alert-cafe-success { background: rgba(22, 163, 74, 0.08); border-color: #16a34a; color: #166534; }
+.alert-cafe-danger  { background: rgba(220, 38, 38, 0.08); border-color: #dc2626; color: #991b1b; }
+.alert-cafe-warning { background: rgba(217, 119, 6, 0.08);  border-color: #d97706; color: #92400e; }
+.alert-cafe-info    { background: rgba(181, 91, 114, 0.08); border-color: var(--rose-dusty); color: var(--rose-dark); }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  body { font-size: 14px; }
+  .btn-primary-cafe, .btn-outline-cafe { padding: 0.6rem 1.1rem; font-size: 0.85rem; }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  .no-print, .sidebar-admin, .navbar-cafe, footer { display: none !important; }
+  body { background: white !important; color: black !important; font-size: 11pt; }
+  .struk-wrapper { border: 1px dashed #333 !important; page-break-inside: avoid; }
+  @page { margin: 1.5cm; }
+}

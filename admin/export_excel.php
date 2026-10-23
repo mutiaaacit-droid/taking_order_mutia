@@ -1,0 +1,2 @@
+echo '<tr><td colspan="7" style="text-align:center;font-weight:bold;font-size:14px;">RUANG TEDUH CAFE</td></tr>';
+echo '<tr><td colspan="7" style="text-align:center;">Laporan Order Periode ' . date('d/m/Y', strtotime($tgl_awal)) . ' s/d ' . date('d/m/Y', strtotime($tgl_akhir)) . '</td></tr>';
