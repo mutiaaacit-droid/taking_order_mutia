@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2026 at 01:17 PM
+-- Generation Time: Oct 28, 2026 at 12:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,7 +45,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `nama_lengkap`, `email`, `role`, `is_active`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '$2y$10$ePyLOtNkEwvA7giv1IG0g.6dl4fqipgQjRG2Ca7igKeBEO.8WxI..', 'Administrator', 'admin@ruangteduh.com', 'super_admin', 1, '2026-10-23 17:54:40', '2026-10-23 10:52:06', '2026-10-23 10:54:40');
+(1, 'admin', '$2y$10$ePyLOtNkEwvA7giv1IG0g.6dl4fqipgQjRG2Ca7igKeBEO.8WxI..', 'Administrator', 'admin@ruangteduh.com', 'super_admin', 1, '2026-10-28 17:10:40', '2026-10-23 10:52:06', '2026-10-28 10:10:40');
 
 -- --------------------------------------------------------
 
@@ -100,11 +100,11 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`id`, `kategori_id`, `nama_menu`, `slug`, `deskripsi`, `harga`, `stok`, `gambar`, `is_featured`, `status`, `created_at`, `updated_at`) VALUES
 (1, 1, 'jus semangka', 'jus-semangka', '', 12000.00, 15, 'menu_20261023180623_b74468fa.jpg', 0, 'tersedia', '2026-10-23 11:06:23', '2026-10-23 11:06:23'),
-(2, 2, 'ayam geprek', 'ayam-geprek', '', 25000.00, 50, 'menu_20261023180851_4a00d030.jpg', 0, 'tersedia', '2026-10-23 11:08:51', '2026-10-23 11:08:51'),
 (3, 2, 'rice bowl', 'rice-bowl', '', 25000.00, 50, 'menu_20261023180939_ef873e1f.jpg', 0, 'tersedia', '2026-10-23 11:09:39', '2026-10-23 11:09:39'),
 (4, 3, 'kentang goreng', 'kentang-goreng', '', 12000.00, 25, 'menu_20261023181028_cd81d2a0.jpg', 0, 'tersedia', '2026-10-23 11:10:28', '2026-10-23 11:10:28'),
 (5, 3, 'dimsum', 'dimsum', '', 15000.00, 25, 'menu_20261023181106_c1c20dca.jpg', 0, 'tersedia', '2026-10-23 11:11:06', '2026-10-23 11:11:06'),
-(6, 1, 'cappucino', 'cappucino', '', 18000.00, 25, 'menu_20261023181144_89809af6.jpg', 0, 'tersedia', '2026-10-23 11:11:44', '2026-10-23 11:11:44');
+(6, 1, 'cappucino', 'cappucino', '', 18000.00, 25, 'menu_20261023181144_89809af6.jpg', 0, 'tersedia', '2026-10-23 11:11:44', '2026-10-23 11:11:44'),
+(7, 1, 'matcha', 'matcha', '', 15000.00, 25, 'menu_20261028171401_a9ba0946.jpg', 0, 'tersedia', '2026-10-28 10:14:01', '2026-10-28 10:14:01');
 
 -- --------------------------------------------------------
 
@@ -128,6 +128,13 @@ CREATE TABLE `orders` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `kode_order`, `pelanggan_id`, `no_meja`, `subtotal`, `pajak`, `total_harga`, `metode_bayar`, `status`, `catatan`, `waktu_order`, `waktu_selesai`, `created_at`) VALUES
+(1, 'RTD-20261028151604-907', 2, 'A01', 25000.00, 2500.00, 27500.00, 'cash', 'pending', '', '2026-10-28 15:16:04', NULL, '2026-10-28 08:16:04');
+
 -- --------------------------------------------------------
 
 --
@@ -137,7 +144,7 @@ CREATE TABLE `orders` (
 CREATE TABLE `order_detail` (
   `id` int(11) UNSIGNED NOT NULL,
   `order_id` int(11) UNSIGNED NOT NULL,
-  `menu_id` int(11) UNSIGNED NOT NULL,
+  `menu_id` int(11) UNSIGNED DEFAULT NULL,
   `nama_menu` varchar(100) NOT NULL,
   `gambar_menu` varchar(255) DEFAULT NULL,
   `harga` decimal(12,2) NOT NULL,
@@ -166,7 +173,8 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id`, `nama`, `no_hp`, `no_meja`, `waktu_datang`, `created_at`) VALUES
-(1, 'Mutia citra', '081378061107', 'A01', '2026-10-23 18:13:51', '2026-10-23 11:13:51');
+(1, 'Mutia citra', '081378061107', 'A01', '2026-10-23 18:13:51', '2026-10-23 11:13:51'),
+(2, 'mutia', '08388873362', 'A01', '2026-10-28 15:06:31', '2026-10-28 08:06:31');
 
 --
 -- Indexes for dumped tables
@@ -242,25 +250,25 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -282,7 +290,7 @@ ALTER TABLE `orders`
 -- Constraints for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  ADD CONSTRAINT `fk_detail_menu` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_detail_menu` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_detail_order` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
