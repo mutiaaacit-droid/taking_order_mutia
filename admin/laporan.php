@@ -59,10 +59,6 @@ include '../includes/header.php';
                        class="btn-outline-cafe flex-1 !px-2 !text-xs">
                         <i class="ph ph-printer"></i> Cetak
                     </a>
-                    <a href="<?= $base_url; ?>admin/export_excel.php?tgl_awal=<?= $tgl_awal; ?>&tgl_akhir=<?= $tgl_akhir; ?>"
-                       class="btn-outline-cafe flex-1 !px-2 !text-xs">
-                        <i class="ph ph-file-xls"></i> Excel
-                    </a>
                 </div>
             </div>
         </form>

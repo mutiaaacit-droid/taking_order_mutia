@@ -32,7 +32,7 @@
                 </a>
 
                 <!-- Selesai -->
-                <a href="<?= $base_url; ?>logout_pelanggan.php"
+                <a href="<?= $base_url; ?>pelanggan/logout_pelanggan.php"
                    title="Selesai & Logout"
                    class="w-9 h-9 rounded-md border border-border-pink bg-white flex items-center justify-center text-berry-soft hover:text-rose-dusty hover:border-rose-dusty transition-colors">
                     <i class="ph ph-sign-out text-base"></i>
